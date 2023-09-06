@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/menuPrincipal"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_parqueo"
+            android:icon="@drawable/cono"
+            android:title="@string/lblParqueo" />
+        <item
+            android:id="@+id/nav_cuenta"
+            android:icon="@drawable/userpeque"
+            android:title="@string/lblCuenta" />
+        <item
+            android:id="@+id/nav_cerrarSesion"
+            android:icon="@drawable/cerrar"
+            android:title="@string/lblCerrarSesion" />
+    </group>
+</menu>

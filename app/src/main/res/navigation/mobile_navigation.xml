@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_parqueo">
+
+    <fragment
+        android:id="@+id/nav_parqueo"
+        android:name="com.example.tp03_grupo9_android.Navigation.ui.parqueo.ParqueoFragment"
+        android:label="@string/title_Parqueo"
+        tools:layout="@layout/fragment_parqueo" />
+
+    <fragment
+        android:id="@+id/nav_cuenta"
+        android:name="com.example.tp03_grupo9_android.Navigation.ui.cuenta.CuentaFragment"
+        android:label="@string/title_Cuenta"
+        tools:layout="@layout/fragment_cuenta" />
+
+    <fragment
+        android:id="@+id/nav_cerrarSesion"
+        android:name="com.example.tp03_grupo9_android.Navigation.ui.CerrarSesion.CerrarSesion"
+        android:label="@string/title_Cuenta"
+        tools:layout="@layout/fragment_cerrar_sesion" />
+</navigation>

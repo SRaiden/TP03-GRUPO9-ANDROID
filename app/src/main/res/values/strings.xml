@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">TP03-GRUPO9-ANDROID</string>
+
+    <!-- MENU PRINCIPAL -->
+    <string name="titulo">Parking Control</string>
+    <string name="Bienvenido">Bienvenidos a parking system</string>
+    <string name="Inicio">Iniciar Sesion para empezar</string>
+    <string name="User">Nombre de Usuario</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="btn_Iniciar">Iniciar Sesion</string>
+    <string name="btn_Registrarse">Registrarse</string>
+
+    <!-- REGISTRARSE -->
+    <string name="lblRegistrarse">Registrarse</string>
+    <string name="txtNombre">Nombre</string>
+    <string name="txtEmail">Correo Electronico</string>
+    <string name="txtPass">Contraseña</string>
+    <string name="txtRepetirPass">Repetir Contraseña</string>
+    <string name="btnAceptar">Aceptar</string>
+
+    <!-- SLIDE BAR -->
+    <string name="lblRegistro">Usuario</string>
+    <string name="lblEmail">Email</string>
+    <string name="lblParqueo">Parqueos</string>
+    <string name="lblCuenta">Mi Cuenta</string>
+    <string name="lblCerrarSesion">Cerrar Sesion</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- CABECERAS -->
+    <string name="title_Home">Home</string>
+    <string name="title_Parqueo">Parqueo</string>
+    <string name="title_Cuenta">Cuenta</string>
+    <string name="title_activity_inicio">InicioActivity</string>
+
+    <!-- CUENTA -->
+    <string name="title_cuenta">Usuario</string>
+    <string name="lbl_nombreUser">User</string>
+    <string name="lbl_emailUser">Email</string>
+
+</resources>

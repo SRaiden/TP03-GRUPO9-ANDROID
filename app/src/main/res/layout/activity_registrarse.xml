@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarseActivity">
+
+
+    <TextView
+        android:id="@+id/lblParking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:text="@string/titulo"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblBienvenidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/lblRegistrarse"
+        android:textColor="#0A58CD"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/lblParking" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="119dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="71dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/user" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="325dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="@string/txtNombre"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBienvenidos" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="322dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btnAceptar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRepetirContraseña" />
+
+    <EditText
+        android:id="@+id/txtRepetirContraseña"
+        android:layout_width="325dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/txtRepetirPass"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContraseña" />
+
+    <EditText
+        android:id="@+id/txtContraseña"
+        android:layout_width="325dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/Contraseña"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="325dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="@string/txtEmail"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
