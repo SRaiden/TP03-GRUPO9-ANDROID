@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.tp03_grupo9_android.Class.UsuarioGlobal;
 import com.example.tp03_grupo9_android.SQLite.AdminSQLiteOpenHelper;
 
 public class RegistrarseActivity extends AppCompatActivity {
@@ -57,19 +58,36 @@ public class RegistrarseActivity extends AppCompatActivity {
                 AdminSQLiteOpenHelper sqlite = new AdminSQLiteOpenHelper(RegistrarseActivity.this, "DB_Automovil", null, 1);
                 SQLiteDatabase bd = sqlite.getWritableDatabase();
 
-                // OBTENER ULTIMO ID DE LA TABLA USER -------------
-                Integer Id;
-                Cursor cursor = bd.rawQuery("SELECT * FROM User ORDER BY Id DESC LIMIT 1", null);
-                if (cursor.moveToFirst()) {
-                    Id = cursor.getColumnIndex("Id");
-                    Id = Id + 1;
-                } else {
-                    Id = 1;
+                // VALIDAR QUE NO HAYA OTRO NOMBRE DE USUARIO Y EMAIL REGISTRADO ANTERIORMENTE
+                String consulta = "SELECT * FROM User WHERE nombre = ?";
+                Cursor cursorNombre = bd.rawQuery(consulta, new String[]{nombre});
+                if (cursorNombre.moveToFirst()) {
+                    Toast.makeText(RegistrarseActivity.this, "Ya existe un usuario registrado con este Nombre", Toast.LENGTH_LONG).show();
+                    return;
                 }
+
+                consulta = "SELECT * FROM User WHERE email = ?";
+                Cursor cursorEmail = bd.rawQuery(consulta, new String[]{email});
+                if (cursorEmail.moveToFirst()) {
+                    Toast.makeText(RegistrarseActivity.this, "Ya existe un usuario registrado con este Email", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // OBTENER ULTIMO ID DE LA TABLA USER -------------
+                int ultimoID = 0;
+                consulta = "SELECT Id FROM User ORDER BY Id DESC LIMIT 1"; // Consulta para obtener el último ID
+                Cursor cursor = bd.rawQuery(consulta, null);
+
+                if (cursor.moveToFirst()) {
+                    ultimoID = cursor.getInt(0);
+                }
+
+                // Incrementa el último ID para el nuevo registro
+                ultimoID++;
 
                 // GUARDAR EN BASE DE DATOS (DB_Automovil) - TABLA USUARIOS
                 ContentValues registro = new ContentValues();
-                registro.put("Id", Id); // modificar luego
+                registro.put("Id", ultimoID);
                 registro.put("Nombre", nombre);
                 registro.put("Email", email);
                 registro.put("Password", password);

@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (cursor.moveToFirst()) {
                 // GUARDAR EL ID DEL USUARIO EN UNA VARIABLE GLOBAL
-                UsuarioGlobal.Id = cursor.getColumnIndex("Id");
+                Integer idUser = cursor.getInt(0);
+                UsuarioGlobal.Id = idUser;
 
                 // IR AL MENU PRINCIPAL, EL MENU PRINCIPAL DENTRO DE LA CARPETA NAVIGATION
                 startActivity(new Intent(MainActivity.this, com.example.tp03_grupo9_android.Navigation.MenuPrincipalActivity.class));

@@ -49,6 +49,12 @@ public class CuentaFragment extends Fragment {
         final TextView textEmail = binding.txtEmail;
         final TextView textUser = binding.txtNombre;
 
+        // Asegura que los TextViews sean de solo lectura
+        textEmail.setFocusable(false);
+        textEmail.setFocusableInTouchMode(false);
+        textUser.setFocusable(false);
+        textUser.setFocusableInTouchMode(false);
+
         Context contexto = requireContext();
 
         // LLAMADA
@@ -61,8 +67,8 @@ public class CuentaFragment extends Fragment {
         Cursor cursor = bd.rawQuery(consulta, new String[]{String.valueOf(UsuarioGlobal.Id)});
 
         if (cursor.moveToFirst()) {
-            String email = String.valueOf(cursor.getColumnIndex("Email"));
-            String User = String.valueOf(cursor.getColumnIndex("Nombre"));
+            String email = cursor.getString(2);
+            String User =cursor.getString(1);
 
             // Actualiza las vistas con los valores de la base de datos
             textEmail.setText(email);
