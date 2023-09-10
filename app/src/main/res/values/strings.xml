@@ -42,5 +42,14 @@
     <string name="title_cuenta">Usuario</string>
     <string name="lbl_nombreUser">User</string>
     <string name="lbl_emailUser">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- PARQUEO -->
+    <string name="title_registrar">Registrar Parqueo</string>
+    <string name="title_cancelar">Cancelar</string>
+    <string name="title_reg">Registrar</string>
+    <string name="title_numMat">N° Matricula</string>
+    <string name="title_Tiempo">Tiempo</string>
 
 </resources>

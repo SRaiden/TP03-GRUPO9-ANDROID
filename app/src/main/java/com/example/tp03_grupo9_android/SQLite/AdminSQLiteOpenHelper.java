@@ -15,7 +15,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase BD_Automovil) {
         BD_Automovil.execSQL("create table User(Id int primary key, Nombre text, Email text, Password text)");
-        BD_Automovil.execSQL("create table Automovil(IdAutomovil int primary key, IdUser int, NumMatricula text unique, Tiempo time)");
+        BD_Automovil.execSQL("create table Automovil(IdAutomovil int primary key, IdUser int, NumMatricula text, Tiempo time)");
     }
 
     @Override
