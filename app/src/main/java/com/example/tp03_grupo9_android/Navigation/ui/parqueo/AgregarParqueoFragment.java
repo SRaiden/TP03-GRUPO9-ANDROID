@@ -37,7 +37,7 @@ import java.text.SimpleDateFormat;
  */
 public class AgregarParqueoFragment extends DialogFragment {
 
-
+    private OnParqueoAddedListener parqueoAddedListener;
     TextView btnRegistrarse, btnCancelar;
     EditText txtNumParqueo, txtTiempo;
 
@@ -51,6 +51,11 @@ public class AgregarParqueoFragment extends DialogFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        try {
+            parqueoAddedListener = (OnParqueoAddedListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " debe implementar OnParqueoAddedListener");
+        }
     }
 
     @Override
@@ -111,6 +116,11 @@ public class AgregarParqueoFragment extends DialogFragment {
                 bd.insert("Automovil", null, registro);
                 bd.close();
 
+                // RECARGAR LA PAGINA DE PARQUEOFRAGMENT
+                if (parqueoAddedListener != null) {
+                    parqueoAddedListener.onParqueoAdded();
+                }
+
                 // MOSTRAR CARTEL DE CORRECTO
                 Toast.makeText(getActivity(), "Nuevo parqueo registrado", Toast.LENGTH_LONG).show();
                 dismiss();
@@ -154,4 +164,7 @@ public class AgregarParqueoFragment extends DialogFragment {
         });
     }
 
+    public interface OnParqueoAddedListener {
+        void onParqueoAdded();
+    }
 }

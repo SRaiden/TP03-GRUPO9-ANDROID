@@ -17,6 +17,7 @@
     <string name="txtPass">Contraseña</string>
     <string name="txtRepetirPass">Repetir Contraseña</string>
     <string name="btnAceptar">Aceptar</string>
+    <string name="btnSalirRegistro">Cancelar</string>
 
     <!-- SLIDE BAR -->
     <string name="lblRegistro">Usuario</string>
@@ -51,5 +52,9 @@
     <string name="title_reg">Registrar</string>
     <string name="title_numMat">N° Matricula</string>
     <string name="title_Tiempo">Tiempo</string>
+
+    <!-- INTEGRANTES -->
+    <string name="titleIntegrantes">INTEGRANTES </string>
+    <string name="Alumnos">Natanael Gomez Carrizo\nAdriel Benjamin Lopez </string>
 
 </resources>

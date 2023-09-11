@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.tp03_grupo9_android.Navigation.ui.parqueo.AgregarParqueoFragment;
+import com.example.tp03_grupo9_android.Navigation.ui.parqueo.ParqueoFragment;
 import com.example.tp03_grupo9_android.R;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -17,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.tp03_grupo9_android.databinding.ActivityInicioBinding;
 
-public class InicioActivity extends AppCompatActivity {
+public class InicioActivity extends AppCompatActivity implements AgregarParqueoFragment.OnParqueoAddedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityInicioBinding binding;
@@ -42,6 +44,14 @@ public class InicioActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+    @Override
+    public void onParqueoAdded() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.nav_host_fragment_content_inicio, new ParqueoFragment())
+                .commit();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

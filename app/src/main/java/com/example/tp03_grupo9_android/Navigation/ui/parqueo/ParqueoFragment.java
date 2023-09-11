@@ -15,8 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.example.tp03_grupo9_android.Class.ParqueoAdapter;
 import com.example.tp03_grupo9_android.Class.ParqueoData;
 import com.example.tp03_grupo9_android.Class.UsuarioGlobal;
+import com.example.tp03_grupo9_android.R;
 import com.example.tp03_grupo9_android.SQLite.AdminSQLiteOpenHelper;
 import com.example.tp03_grupo9_android.databinding.FragmentParqueoBinding;
 
@@ -87,10 +89,11 @@ public class ParqueoFragment extends Fragment {
             } while (cursor.moveToNext());
         }
 
-        // EL NUMERO DE MATRICULO Y TIEMPO ESTAN GUARDADOS EN UNA LISTA,
-        // TENES QUE PONER LOS ELEMENTOS EN LA GRIDVIEW Y TERMINADO EL TP
-
+        // Crear el adaptador personalizado y configurarlo con la lista de parqueos
+        ParqueoAdapter adapter = new ParqueoAdapter(requireContext(), parqueos);
+        grillaParqueo.setAdapter(adapter);
     }
+
 
     private void showDialog() {
         AgregarParqueoFragment dialogFragment = new AgregarParqueoFragment();

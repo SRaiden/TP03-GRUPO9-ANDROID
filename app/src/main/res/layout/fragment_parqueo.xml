@@ -7,22 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Navigation.ui.parqueo.ParqueoFragment">
 
-    <TextView
-        android:id="@+id/parqueoMatricula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Número de Parqueo: "
-        android:textSize="16sp"
-        android:layout_centerInParent="true" />
-
-    <TextView
-        android:id="@+id/parqueoTiempo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Número de Parqueo: "
-        android:textSize="16sp"
-        android:layout_centerInParent="true" />
-
     <GridView
         android:id="@+id/grillaParqueo"
         android:layout_width="match_parent"
@@ -31,10 +15,6 @@
         android:padding="8dp"
         android:columnWidth="160dp"
         android:stretchMode="columnWidth">
-
-
-
-
     </GridView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

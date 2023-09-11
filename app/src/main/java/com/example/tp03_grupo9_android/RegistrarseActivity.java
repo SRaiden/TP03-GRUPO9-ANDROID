@@ -18,7 +18,7 @@ import com.example.tp03_grupo9_android.SQLite.AdminSQLiteOpenHelper;
 public class RegistrarseActivity extends AppCompatActivity {
 
     private EditText txtNombre, txtEmail, txtPassword, txtRepetirPassword;
-    private Button btnAceptar;
+    private Button btnAceptar, btnCancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +36,7 @@ public class RegistrarseActivity extends AppCompatActivity {
         txtRepetirPassword = findViewById(R.id.txtRepetirContraseña);
 
         btnAceptar = findViewById(R.id.btnAceptar);
+        btnCancelar = findViewById(R.id.btnSalirRegistro);
     }
 
     private void setClickListener(){
@@ -116,6 +117,14 @@ public class RegistrarseActivity extends AppCompatActivity {
 
             private boolean isValidEmail(String email) {
                 return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+            }
+
+        });
+
+        btnCancelar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegistrarseActivity.this, MainActivity.class));
             }
 
         });

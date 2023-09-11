@@ -58,13 +58,24 @@
         app:layout_constraintTop_toBottomOf="@+id/lblBienvenidos" />
 
     <Button
-        android:id="@+id/btnAceptar"
-        android:layout_width="322dp"
-        android:layout_height="54dp"
+        android:id="@+id/btnSalirRegistro"
+        android:layout_width="140dp"
+        android:layout_height="52dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="@string/btnAceptar"
+        android:text="@string/btnSalirRegistro"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAceptar"
+        app:layout_constraintTop_toBottomOf="@+id/txtRepetirContraseña" />
+
+    <Button
+        android:id="@+id/btnAceptar"
+        android:layout_width="148dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/btnAceptar"
+        app:layout_constraintStart_toEndOf="@+id/btnSalirRegistro"
         app:layout_constraintTop_toBottomOf="@+id/txtRepetirContraseña" />
 
     <EditText
